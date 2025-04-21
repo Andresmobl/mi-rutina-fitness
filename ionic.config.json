@@ -1,0 +1,8 @@
+{
+  "name": "Mi Rutina Fitness",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "80906644"
+}
