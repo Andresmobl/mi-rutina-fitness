@@ -13,5 +13,70 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Formulario para agregar un nuevo ejercicio -->
+  <form [formGroup]="ejercicioForm" (ngSubmit)="agregarEjercicio()">
+    <!-- [formGroup]="ejercicioForm": Vincula el formulario al grupo de formularios reactivos de Angular -->
+    <!-- (ngSubmit)="agregarEjercicio()": Ejecuta el método 'agregarEjercicio' cuando se envía el formulario -->
+
+    <!-- Campo de entrada para el nombre del ejercicio -->
+    <ion-item>
+      <ion-input 
+        formControlName="nombre" 
+        placeholder="Nombre del Ejercicio" 
+        [clearInput]="true">
+        <!-- formControlName="nombre": Enlace del campo al control 'nombre' del formulario -->
+        <!-- placeholder="Nombre del ejercicio": Texto de ayuda dentro del input -->
+        <!-- [clearInput]="true": Permite limpiar el campo con un botón dentro del input -->
+      </ion-input>
+    </ion-item>
+
+    <!-- Campo de entrada para la descripción del Ejercicio -->
+    <ion-item>
+      <ion-textarea 
+        formControlName="repeticiones" 
+        placeholder="Repeticiones">
+        <!-- formControlName="repeticiones": Enlace al control 'repeticiones' del formulario -->
+        <!-- placeholder="Repeticiones": Texto de ayuda dentro del textarea -->
+      </ion-textarea>
+    </ion-item>
+
+    <!-- Botón para seleccionar una imagen -->
+    <ion-item>
+      <ion-button 
+        shape="round" 
+        expand="block" 
+        (click)="seleccionarImagen()">
+        <!-- shape="round": Da bordes redondeados al botón -->
+        <!-- expand="block": Hace que el botón ocupe todo el ancho disponible -->
+        <!-- (click)="seleccionarImagen()": Llama al método para seleccionar una imagen -->
+        Seleccionar Imagen
+      </ion-button>
+    </ion-item>
+    
+    <!-- Muestra la imagen seleccionada si existe -->
+    <ion-item *ngIf="imagen">
+      <!-- *ngIf="imagen": Renderiza el elemento solo si 'imagen' tiene un valor -->
+      <ion-thumbnail slot="start">
+        <!-- Muestra una miniatura de la imagen -->
+        <img [src]="imagen" alt="Imagen seleccionada">
+        <!-- [src]="imagen": Enlace dinámico para mostrar la imagen seleccionada -->
+        <!-- alt="Imagen seleccionada": Texto alternativo para accesibilidad -->
+      </ion-thumbnail>
+    </ion-item>    
+
+    <!-- Botón para enviar el formulario y agregar el ejercicio -->
+    <ion-button 
+      expand="block" 
+      shape="round" 
+      type="submit" 
+      [disabled]="ejercicioForm.invalid">
+      <!-- expand="block": El botón ocupa todo el ancho disponible -->
+      <!-- shape="round": Bordes redondeados para mejor apariencia -->
+      <!-- type="submit": Define el tipo de botón para enviar el formulario -->
+      <!-- [disabled]="ejercicioForm.invalid": Desactiva el botón si el formulario no es válido -->
+      Agregar Ejercicio
+    </ion-button>
+  </form>
+
   <app-explore-container name="{{ 'TAB2_TITLE' | translate }}"></app-explore-container>
 </ion-content>
