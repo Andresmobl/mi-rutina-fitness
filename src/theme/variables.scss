@@ -1,2 +1,8 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+//Añadido estilo para que el título de la barra superior se vea más claro
+ion-title{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      {{ "TAB1_TITLE" | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,51 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">{{ "TAB1_TITLE" | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Lista de ejercicios -->
+  <ion-list>
+    <!-- Componente deslizante para cada ejercicio -->
+    <ion-item-sliding *ngFor="let ejercicio of ejercicios">
+      <!-- Elemento de la lista que representa un ejercicio -->
+      <ion-item (click)="marcarCompletado(ejercicio.id)">
+        <!-- Al hacer clic, se llama al método 'marcarCompletado' pasando el ID del ejercicio -->
+
+        <!-- Checkbox para indicar si el ejercicio está completado -->
+        <ion-checkbox slot="start" [checked]="ejercicio.completado">
+          <!-- El checkbox se mostrará marcado si 'ejercicio.completado' es true -->
+        </ion-checkbox>
+
+        <!-- Miniatura para mostrar la imagen del ejercicio si existe -->
+        <ion-thumbnail slot="start" *ngIf="ejercicio.imagen">
+          <!-- Solo se muestra si el ejercicio tiene una imagen asociada -->
+          <img [src]="ejercicio.imagen" alt="Imagen del ejercicio">
+          <!-- La fuente de la imagen se establece dinámicamente desde el objeto 'ejercicio' -->
+        </ion-thumbnail>
+        
+        <!-- Etiqueta que muestra la información del ejercicio -->
+        <ion-label>
+          <h2>{{ ejercicio.nombre }}</h2>
+          <!-- Muestra el título del ejercicio -->
+          <p>{{ ejercicio.repeticiones }}</p>
+          <!-- Muestra la descripción del ejercicio -->
+        </ion-label>
+      </ion-item>
+
+      <!-- Opciones disponibles al deslizar el elemento -->
+      <ion-item-options>
+        <!-- Opción para eliminar el ejercicio -->
+        <ion-item-option color="danger" (click)="eliminarEjercicio(ejercicio.id)">
+          <!-- Al hacer clic, se llama al método 'eliminarEjercicios' pasando el ID del ejercicio -->
+          <ion-icon name="trash"></ion-icon>
+          <!-- Icono de papelera para indicar que la opción es eliminar -->
+          Eliminar
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <app-explore-container name="{{ 'TAB1_TITLE' | translate }}"></app-explore-container>
 </ion-content>
