@@ -6,3 +6,17 @@ ion-title{
     padding-top: 30px;
     padding-bottom: 15px;
 }
+
+:root {
+    /* Colores para modo claro */
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+    --ion-color-primary: #3880ff;
+  }
+  
+  body.dark {
+    /* Colores para modo oscuro */
+    --ion-background-color: #121212;
+    --ion-text-color: #ffffff;
+    --ion-color-primary: #bb86fc;
+  }

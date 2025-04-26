@@ -6,5 +6,12 @@
     "CANCEL": "CANCELAR",
     "SELECT": "SELECCIONAR",
     "es": "Español",
-    "en": "Ingles"
+    "en": "Ingles",
+    "Repetitions": "REPETICIONES",
+    "Exercise_Name": "NOMBRE DEL EJERCICIO",
+    "SELECT_IMAGE": "SELECCIONAR IMAGEN",
+    "ADD_EXERCISE": "AÑADIR EJERCICIO",
+    "DARK_MODE": "MODO OSCURO",
+    "LIGHT_MODE": "MODO CLARO",
+    "USERNAME": "NOMBRE DE USUARIO"
 }

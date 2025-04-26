@@ -22,7 +22,7 @@
     <ion-item>
       <ion-input 
         formControlName="nombre" 
-        placeholder="Nombre del Ejercicio" 
+        placeholder="{{ 'Exercise_Name' | translate }}" 
         [clearInput]="true">
         <!-- formControlName="nombre": Enlace del campo al control 'nombre' del formulario -->
         <!-- placeholder="Nombre del ejercicio": Texto de ayuda dentro del input -->
@@ -34,7 +34,7 @@
     <ion-item>
       <ion-textarea 
         formControlName="repeticiones" 
-        placeholder="Repeticiones">
+        placeholder="{{ 'Repetitions' | translate }}">
         <!-- formControlName="repeticiones": Enlace al control 'repeticiones' del formulario -->
         <!-- placeholder="Repeticiones": Texto de ayuda dentro del textarea -->
       </ion-textarea>
@@ -49,7 +49,7 @@
         <!-- shape="round": Da bordes redondeados al botón -->
         <!-- expand="block": Hace que el botón ocupe todo el ancho disponible -->
         <!-- (click)="seleccionarImagen()": Llama al método para seleccionar una imagen -->
-        Seleccionar Imagen
+        {{ "SELECT_IMAGE" | translate }}
       </ion-button>
     </ion-item>
     
@@ -74,9 +74,8 @@
       <!-- shape="round": Bordes redondeados para mejor apariencia -->
       <!-- type="submit": Define el tipo de botón para enviar el formulario -->
       <!-- [disabled]="ejercicioForm.invalid": Desactiva el botón si el formulario no es válido -->
-      Agregar Ejercicio
+      {{ "ADD_EXERCISE" | translate }}
     </ion-button>
   </form>
 
-  <app-explore-container name="{{ 'TAB2_TITLE' | translate }}"></app-explore-container>
 </ion-content>

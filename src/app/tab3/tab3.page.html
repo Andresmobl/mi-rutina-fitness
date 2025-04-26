@@ -12,14 +12,27 @@
       <ion-title size="large">{{ "TAB3_TITLE" | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-list>
+
     <ion-item class="select">
       <ion-label>{{ "LANGUAGE" | translate }}</ion-label>
       <ion-select cancelText="{{ 'CANCEL' | translate }}" placeholder="{{ 'SELECT' | translate }}" (ionChange)="changeLang($event)">
         <ion-select-option *ngFor="let lang of langs" value="{{lang}}">{{ lang | translate }}</ion-select-option>
       </ion-select>
     </ion-item>
-  </ion-list>
+    
+    <!-- Cambiar tema -->
+    <ion-item>
+      <ion-label>{{ isDark ? ('DARK_MODE' | translate) : ('LIGHT_MODE' | translate) }}</ion-label>
+      <ion-toggle slot="end" [(ngModel)]="isDark" (ionChange)="toggleDarkTheme()"></ion-toggle>
+    </ion-item>
 
-  <app-explore-container name="{{ 'TAB3_TITLE' | translate }}"></app-explore-container>
+    <!-- Cambiar nombre de usuario -->
+    <ion-item>
+      <ion-label position="stacked">{{ "USERNAME" | translate }}</ion-label>
+      <ion-input [(ngModel)]="username" (ionBlur)="saveUsername()"></ion-input>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

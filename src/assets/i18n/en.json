@@ -6,5 +6,12 @@
     "CANCEL": "CANCEL",
     "SELECT": "SELECT",
     "es": "Spanish",
-    "en": "English"
+    "en": "English",
+    "Repetitions": "REPETITIONS",
+    "Exercise_Name": "EXERCISE NAME",
+    "SELECT_IMAGE": "SELECT IMAGE",
+    "ADD_EXERCISE": "ADD EXERCISE",
+    "DARK_MODE": "DARK_MODE",
+    "LIGHT_MODE": "LIGHT_MODE",
+    "USERNAME": "USERNAME"
 }
